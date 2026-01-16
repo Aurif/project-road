@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cohrjqkmqdjmb"]
+
+[ext_resource type="Shader" uid="uid://dpyrlnbul5rvm" path="res://components/orgs/deuter.gdshader" id="1_nxogm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3253y"]
+shader = ExtResource("1_nxogm")
+
+[sub_resource type="Gradient" id="Gradient_nxogm"]
+offsets = PackedFloat32Array(0, 0.35333332, 0.73333335, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.105882354, 0.05882353, 1, 1, 0, 0.73333335, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3253y"]
+gradient = SubResource("Gradient_nxogm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxogm"]
+shader = ExtResource("1_nxogm")
+
+[node name="Scene" type="Node2D"]
+material = SubResource("ShaderMaterial_3253y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 117.0
+offset_top = 247.0
+offset_right = 1010.0
+offset_bottom = 369.0
+texture = SubResource("GradientTexture2D_3253y")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 364.0
+offset_top = 305.0
+offset_right = 1010.0
+offset_bottom = 369.0
+texture = SubResource("GradientTexture2D_3253y")
+
+[node name="Shader" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_nxogm")
+offset_right = 1151.0
+offset_bottom = 647.0
