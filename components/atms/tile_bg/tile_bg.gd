@@ -1,17 +1,15 @@
-extends Node
+extends AtmTileGenerator
 
 @export var noise: FastNoiseLite
-@export var init_rect: Rect2i
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-    fill_area(init_rect, Vector2i.ZERO)
 
 ###
 ### Tile filling
 ###
 const CUTOFF: float = 0
 func fill_area(rect: Rect2i, source_offset: Vector2i) -> void:
+    if not self.visible:
+        return
+
     var terrain_0: Array[Vector2i] = []
     var terrain_1: Array[Vector2i] = []
     
