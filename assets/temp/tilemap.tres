@@ -1,12 +1,15 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c4kaknsp4ijjj"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://c4kaknsp4ijjj"]
 
 [ext_resource type="Texture2D" uid="uid://dbb6vql2uq7h" path="res://assets/tiles/tilemap.png" id="1_6n4xn"]
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_nxogm"]
-tile_data = PackedInt32Array(0, 458752, 19, 65536, 458752, 22, 131072, 1179648, 24, 196608, 589824, 19, 262144, 1114112, 24, 327680, 458752, 19, 393216, 458752, 22)
-
 [sub_resource type="TileMapPattern" id="TileMapPattern_3253y"]
 tile_data = PackedInt32Array(0, 458752, 19, 65536, 458752, 22, 131072, 720896, 19, 196608, 589824, 19, 262144, 720896, 19, 327680, 458752, 19, 393216, 458752, 22)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_6n4xn"]
+tile_data = PackedInt32Array(0, 393216, 20, 1, 524288, 20, 2, 720896, 19, 3, 589824, 20, 4, 720896, 19, 5, 393216, 20, 6, 524288, 20)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_4vknp"]
+tile_data = PackedInt32Array(0, 458752, 20, 65536, 458752, 22, 131072, 720896, 19, 196608, 589824, 19, 262144, 720896, 19, 327680, 458752, 19, 393216, 458752, 20, 1, 524288, 20, 65537, 524288, 22, 131073, 589824, 22, 196609, 589824, 22, 262145, 589824, 22, 327681, 524288, 19, 393217, 524288, 20, 2, 720896, 19, 65538, 786432, 22, 131074, 720896, 19, 196610, 720896, 19, 262146, 720896, 19, 327682, 786432, 22, 393218, 720896, 19, 3, 589824, 20, 65539, 786432, 22, 131075, 720896, 19, 196611, 720896, 19, 262147, 720896, 19, 327683, 786432, 22, 393219, 589824, 20, 4, 720896, 19, 65540, 786432, 22, 131076, 720896, 19, 196612, 720896, 19, 262148, 720896, 19, 327684, 786432, 22, 393220, 720896, 19, 5, 393216, 20, 65541, 393216, 22, 131077, 589824, 22, 196613, 589824, 22, 262149, 589824, 22, 327685, 393216, 19, 393221, 393216, 20, 6, 458752, 20, 65542, 458752, 22, 131078, 720896, 19, 196614, 589824, 19, 262150, 720896, 19, 327686, 458752, 19, 393222, 458752, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3253y"]
 texture = ExtResource("1_6n4xn")
@@ -366,5 +369,6 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 terrain_set_0/terrain_1/name = "Grass"
 terrain_set_0/terrain_1/color = Color(0.5019608, 0.9490196, 0.2509804, 1)
 sources/0 = SubResource("TileSetAtlasSource_3253y")
-pattern_0 = SubResource("TileMapPattern_nxogm")
-pattern_1 = SubResource("TileMapPattern_3253y")
+pattern_0 = SubResource("TileMapPattern_3253y")
+pattern_1 = SubResource("TileMapPattern_6n4xn")
+pattern_2 = SubResource("TileMapPattern_4vknp")

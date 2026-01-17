@@ -15,8 +15,8 @@ func fill_area(rect: Rect2i, source_offset: Vector2i) -> void:
     var terrain_0: Array[Vector2i] = []
     var terrain_1: Array[Vector2i] = []
     
-    for x in range(rect.position.x, rect.end.x+1):
-        for y in range(rect.position.y, rect.end.y+1):
+    for x in range(rect.position.x, rect.end.x):
+        for y in range(rect.position.y, rect.end.y):
             var pos: Vector2i = Vector2i(x, y)
             terrain_0.append(pos)
             if noise.get_noise_2dv((pos+source_offset)*16) > CUTOFF:
