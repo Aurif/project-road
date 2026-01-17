@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cohrjqkmqdjmb"]
+[gd_scene load_steps=7 format=3 uid="uid://cohrjqkmqdjmb"]
 
 [ext_resource type="Shader" uid="uid://dpyrlnbul5rvm" path="res://components/orgs/deuter.gdshader" id="1_nxogm"]
+[ext_resource type="TileSet" uid="uid://c4kaknsp4ijjj" path="res://assets/temp/tilemap.tres" id="2_3253y"]
+[ext_resource type="Script" uid="uid://cq7eqmlpo2mn8" path="res://components/atms/tile_bg/tile_bg.gd" id="3_3253y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3253y"]
 shader = ExtResource("1_nxogm")
 
-[sub_resource type="Gradient" id="Gradient_nxogm"]
-offsets = PackedFloat32Array(0, 0.35333332, 0.73333335, 1)
-colors = PackedColorArray(1, 0, 0, 1, 0.105882354, 0.05882353, 1, 1, 0, 0.73333335, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3253y"]
-gradient = SubResource("Gradient_nxogm")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u3cyc"]
+noise_type = 0
+frequency = 0.0124
+fractal_octaves = 1
+fractal_lacunarity = 21.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nxogm"]
 shader = ExtResource("1_nxogm")
@@ -18,21 +19,15 @@ shader = ExtResource("1_nxogm")
 [node name="Scene" type="Node2D"]
 material = SubResource("ShaderMaterial_3253y")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 117.0
-offset_top = 247.0
-offset_right = 1010.0
-offset_bottom = 369.0
-texture = SubResource("GradientTexture2D_3253y")
+[node name="Ground" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_3253y")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 364.0
-offset_top = 305.0
-offset_right = 1010.0
-offset_bottom = 369.0
-texture = SubResource("GradientTexture2D_3253y")
+[node name="Background" type="Node" parent="Ground"]
+script = ExtResource("3_3253y")
+noise = SubResource("FastNoiseLite_u3cyc")
+init_rect = Rect2i(-2, -2, 44, 26)
 
 [node name="Shader" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_nxogm")
-offset_right = 1151.0
-offset_bottom = 647.0
+offset_right = 640.0
+offset_bottom = 360.0
