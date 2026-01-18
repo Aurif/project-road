@@ -17,7 +17,7 @@ func fill_area(rect: Rect2i, source_offset: Vector2i) -> void:
         for y in range(rect.position.y, rect.end.y):
             var pos: Vector2i = Vector2i(x, y)
             terrain_0.append(pos)
-            if noise.get_noise_2dv((pos+source_offset)*16) > CUTOFF:
+            if noise.get_noise_2dv((pos-source_offset)*16) > CUTOFF:
                 terrain_1.append(pos)
                 
     (get_parent() as TileMapLayer).set_cells_terrain_connect(terrain_0, 0, 0)
